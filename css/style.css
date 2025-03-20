@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+/* CSSを記述 START */
+h1{
+    background-color: #7bafeb;
+    padding: 30px;
+    font-family: 'Avenir','Corbel';
+}
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 30px;
+    background-color: #bed9f2;
+}
+section{
+    padding: 15px;
+    font-size: 70px;
+    font-family: 'Courier New', Courier, monospace;
+}
+ul {
+    padding: 0;
+    border-top: px solid #ffffff;
+    display: table;
+    /* 定義 */
+    table-layout: fixed;
+    width: 100%;
+}
+li{
+   padding: 20px;
+    text-align: center;
+    list-style-type: none;
+    border: 30px solid #bed9f2;
+    background-color: #75da9c;
+    display: table-cell;
+        /* 定義 */
+    cursor: pointer;
+    border-radius: 70px;
+    font-size: 30px;
+}
+li:hover{
+    background: #76c6b2;
+    color: rgb(65, 54, 48);
+}
+button{
+    background-color: #b0e0bf;
+    text-align: center;
+    border: 3px solid #7bc3aa;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 20px;
+    width: 10%;
+    align-items: center;
+}
+button:hover{
+    background-color: #90d28a;
+}
+p{
+    font-size: 40px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
