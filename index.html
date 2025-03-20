@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSSファイルの読み込み (css/style.css) -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- jQueryファイルの読み込み -->
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <!-- axiosファイルの読み込み -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>素数教信者が作ったくだらないゲーム</title>
+</head>
+<body>
+    <!-- HTMLの記述場所 START -->
+    <h1>素数orNOT</h1>
+    <main>
+        <section id="number">?</section>
+        <ul>
+            <li id="sosuu_btn">素数</li>
+            <li id="sosuujanai_btn">素数じゃない</li>
+        </ul>
+        <div><span id="saiten"></span></div>
+        <div id="kaisetu"></div>
+        <button id="r_btn">次へ</button>
+        <p id="streak">🔥０</p>
+    </main>
+            <script src="script.js"></script>
+    
+    <!-- HTMLの記述場所 END -->
+<script>
+// JavaScriptの記述 START
+    let num;
+    let streak = 0;
+    function generateRandomNumber() {
+        if (Math.random() < 0.9) {
+            return Math.floor(Math.random() * 100) * 2 + 1;
+        } else {
+            return Math.floor(Math.random() * 100) * 2 + 2;
+        }
+    }
+    document.getElementById("r_btn").addEventListener("click", function () {
+        num = generateRandomNumber();
+        document.getElementById("number").textContent = num;
+        $("#saiten").text("");
+        $("#kaisetu").text("");
+    });
+
+    $("#sosuu_btn").on("click", function () {
+
+        if (num == 1) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１は素数じゃないよ");
+        } else if (num == 2) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 3) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 4) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 5) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 6) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 7) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 8) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 9) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３で割れるよ");
+        } else if (num == 10) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 11) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 12) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 13) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 14) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 15) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３と５で割れるよ");
+        } else if (num == 16) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 17) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 18) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 19) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 20) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 21) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３と７で割れるよ");
+        } else if (num == 22) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 23) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 24) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 25) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("５で割れるよ");
+        } else if (num == 26) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 27) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３で割れるよ");
+        } else if (num == 28) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 29) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 30) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 31) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 32) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 33) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３と１１で割れるよ");
+        } else if (num == 34) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 35) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("５と７で割れるよ");
+        } else if (num == 36) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２と３で割れるよ");
+        } else if (num == 37) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 38) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 39) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３と１３で割れるよ");
+        } else if (num == 40) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 41) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 42) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 43) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 44) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 45) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３と５で割れるよ");
+        } else if (num == 46) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 47) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 48) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 49) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("７で割れるよ");
+        } else if (num == 50) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 51) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３で割れるよ");
+        } else if (num == 52) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 53) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 54) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 55) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("５で割れるよ");
+        } else if (num == 56) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 57) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３で割れるよ");
+        } else if (num == 58) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 59) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 60) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 61) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 62) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 63) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３で割れるよ");
+        } else if (num == 64) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 65) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("５で割れるよ");
+        } else if (num == 66) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 67) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 68) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 69) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３で割れるよ");
+        } else if (num == 70) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 71) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 72) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 73) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 74) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 75) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３と５で割れるよ");
+        } else if (num == 76) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 77) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("７で割れるよ");
+        } else if (num == 78) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 79) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 80) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 81) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３で割れるよ");
+        } else if (num == 82) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 83) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 84) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 85) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("５で割れるよ");
+        } else if (num == 86) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 87) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３で割れるよ");
+        } else if (num == 88) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 89) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 90) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 91) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("７で割れるよ");
+        } else if (num == 92) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 93) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３で割れるよ");
+        } else if (num == 94) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 95) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("５で割れるよ");
+        } else if (num == 96) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 97) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 98) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 99) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３で割れるよ");
+        } else if (num == 100) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 101) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 102) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 103) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 104) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 105) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３と５で割れるよ");
+        } else if (num == 106) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 107) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 108) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 109) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 110) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 111) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３で割れるよ");
+        } else if (num == 112) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 113) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 114) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 115) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("５で割れるよ");
+        } else if (num == 116) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 117) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３で割れるよ");
+        } else if (num == 118) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 119) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("７で割れるよ");
+        } else if (num == 120) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 121) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１１で割れるよ");
+        } else if (num == 122) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 123) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３で割れるよ");
+        } else if (num == 124) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 125) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("５で割れるよ");
+        } else if (num == 126) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 127) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 128) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 129) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３で割れるよ");
+        } else if (num == 130) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 131) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 132) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 133) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("７で割れるよ");
+        } else if (num == 134) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 135) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３と５で割れるよ");
+        } else if (num == 136) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 137) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 138) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 139) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 140) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 141) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３で割れるよ");
+        } else if (num == 142) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 143) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１１で割れるよ");
+        } else if (num == 144) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 145) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("５で割れるよ");
+        } else if (num == 146) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 147) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３と７で割れるよ");
+        } else if (num == 148) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 149) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 150) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 151) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 152) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 153) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３で割れるよ");
+        } else if (num == 154) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 155) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("５で割れるよ");
+        } else if (num == 156) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 157) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 158) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 159) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３で割れるよ");
+        } else if (num == 160) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 161) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("７で割れるよ");
+        } else if (num == 162) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 163) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 164) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 165) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３と５で割れるよ");
+        } else if (num == 166) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 167) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 168) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 169) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１３で割れるよ");
+        } else if (num == 170) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 171) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３で割れるよ");
+        } else if (num == 172) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 173) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 174) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 175) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("５で割れるよ");
+        } else if (num == 176) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 177) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３で割れるよ");
+        } else if (num == 178) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 179) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 180) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 181) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 182) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 183) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３で割れるよ");
+        } else if (num == 184) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 185) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("５で割れるよ");
+        } else if (num == 186) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 187) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１１で割れるよ");
+        } else if (num == 188) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 189) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３で割れるよ");
+        } else if (num == 190) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 191) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 192) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 193) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 194) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 195) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３と５で割れるよ");
+        } else if (num == 196) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 197) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 198) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        } else if (num == 199) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 200) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２で割れるよ");
+        }
+        checkString();
+    });
+
+    $("#sosuujanai_btn").on("click", function () {
+        if (num == 1) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 2) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２は素数だよ");
+        } else if (num == 3) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３は素数だよ");
+        } else if (num == 4) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 5) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("５は素数だよ");
+        } else if (num == 6) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 7) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("７は素数だよ");
+        } else if (num == 8) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 9) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 10) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 11) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１１は素数だよ");
+        } else if (num == 12) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 13) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１３は素数だよ");
+        } else if (num == 14) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 15) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 16) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 17) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１７は素数だよ");
+        } else if (num == 18) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 19) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１９は素数だよ");
+        } else if (num == 20) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 21) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 22) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 23) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２３は素数だよ");
+        } else if (num == 24) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 25) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 26) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 27) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 28) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 29) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("２９は素数だよ");
+        } else if (num == 30) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 31) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３１は素数だよ");
+        } else if (num == 32) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 33) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 34) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 35) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 36) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 37) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("３７は素数だよ");
+        } else if (num == 38) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 39) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 40) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 41) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("４１は素数だよ");
+        } else if (num == 42) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 43) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("４３は素数だよ");
+        } else if (num == 44) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 45) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 46) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 47) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("４７は素数だよ");
+        } else if (num == 48) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 49) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 50) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 51) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 52) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 53) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("５３は素数だよ");
+        } else if (num == 54) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 55) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 56) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 57) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 58) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 59) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("５９は素数だよ");
+        } else if (num == 60) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 61) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("６１は素数だよ");
+        } else if (num == 62) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 63) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 64) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 65) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 66) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 67) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("６７は素数だよ");
+        } else if (num == 68) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 69) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 70) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 71) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("７１は素数だよ");
+        } else if (num == 72) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 73) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("７３は素数だよ");
+        } else if (num == 74) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 75) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 76) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 77) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 78) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 79) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("７９は素数だよ");
+        } else if (num == 80) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 81) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 82) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 83) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("８３は素数だよ");
+        } else if (num == 84) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 85) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 86) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 87) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 88) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 89) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("８９は素数だよ");
+        } else if (num == 90) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 91) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 92) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 93) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 94) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 95) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 96) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 97) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("９７は素数だよ");
+        } else if (num == 98) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 99) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 100) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 101) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１０１は素数だよ");
+        } else if (num == 102) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 103) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１０３は素数だよ");
+        } else if (num == 104) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 105) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 106) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 107) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１０７は素数だよ");
+        } else if (num == 108) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 109) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１０９は素数だよ");
+        } else if (num == 110) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 111) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 112) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 113) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１１３は素数だよ");
+        } else if (num == 114) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 115) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 116) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 117) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 118) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 119) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 120) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 121) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 122) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 123) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 124) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 125) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 126) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 127) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１２７は素数だよ");
+        } else if (num == 128) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 129) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 130) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 131) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１３１は素数だよ");
+        } else if (num == 132) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 133) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 134) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 135) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 136) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 137) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１３７は素数だよ");
+        } else if (num == 138) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 139) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１３９は素数だよ");
+        } else if (num == 140) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 141) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 142) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 143) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 144) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 145) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 146) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 147) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 148) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 149) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１４９は素数だよ");
+        } else if (num == 150) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 151) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１５１は素数だよ");
+        } else if (num == 152) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 153) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 154) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 155) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 156) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 157) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１５７は素数だよ");
+        } else if (num == 158) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 159) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 160) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 161) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 162) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 163) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１６３は素数だよ");
+        } else if (num == 164) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 165) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 166) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 167) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１６７は素数だよ");
+        } else if (num == 168) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 169) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 170) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 171) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 172) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 173) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１７３は素数だよ");
+        } else if (num == 174) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 175) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 176) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 177) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 178) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 179) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１７９は素数だよ");
+        } else if (num == 180) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 181) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１８１は素数だよ");
+        } else if (num == 182) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 183) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 184) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 185) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 186) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 187) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 188) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 189) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 190) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 191) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１９１は素数だよ");
+        } else if (num == 192) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 193) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１９３は素数だよ");
+        } else if (num == 194) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 195) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 196) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 197) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１９７は素数だよ");
+        } else if (num == 198) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        } else if (num == 199) {
+            $("#saiten").text("不正解😭");
+            $("#kaisetu").text("１９９は素数だよ");
+        } else if (num == 200) {
+            $("#saiten").text("正解😊");
+            $("#kaisetu").text("");
+        }
+        checkString();
+    });
+    function checkString(){
+    if($("#saiten").text()==="正解😊"){
+     streak++;
+    }else{
+     streak=0;
+    }
+    let streakDisplay="🔥 "+streak;
+    document.getElementById("streak").innerText=streakDisplay;
+}
+// JavaScriptの記述 END
+</script>
+</body>
+</html>
